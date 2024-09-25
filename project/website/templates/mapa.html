@@ -1,0 +1,182 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}PEOTDU - BCS - Visualiza la cartografia{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+<link rel="stylesheet" href="{% static 'css/mapa.css' %}" />
+{% endblock %}
+
+{% block content %}
+
+<div class="map-container">
+    <div class="gradient-line"></div>
+    <h1>Visualizador de Mapas</h1>
+    <div id="map-container">
+        <div id="map">
+            <div id="map-legend">
+                <h4>Capas Activas:</h4>
+                <p id="current-layer-name">No layer selected</p>
+            </div>
+        </div>
+    </div>
+    <div id="kml-layer-control">
+        <h4>Seleccione una Capa KML:</h4>
+        <div id="kml-layer-list">
+            {% for kml_file in kml_files %}
+            <div class="kml-layer-item">
+                <label>
+                    <input type="checkbox" class="kml-layer-checkbox" data-filename="{{ kml_file.filename }}" {% if kml_file.preselected %}checked{% endif %}>
+                    <span style="background-color: var(--layer{{ forloop.counter }}-color);"></span>
+                    {{ kml_file.label }}
+                </label>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="gradient-line-bottom"></div>
+</div>
+
+{% endblock %}
+
+{% block extra_js %}
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-plugins/3.3.1/layer/vector/KML.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var map = L.map('map').setView([24.1426, -110.3127], 8);
+
+        // Define base layers
+        var satelliteLayer = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+            attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
+        });
+
+        var osmLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© OpenStreetMap contributors'
+        });
+
+        var topoLayer = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
+            attribution: 'Map data: © OpenStreetMap contributors, SRTM | Map style: © OpenTopoMap (CC-BY-SA)'
+        });
+
+        // Set the default layer
+        satelliteLayer.addTo(map);
+
+        // Create layer control
+        var baseLayers = {
+            "OpenStreetMap": osmLayer,
+            "Satellite": satelliteLayer,
+            "Topographic": topoLayer
+        };
+
+        L.control.layers(baseLayers).addTo(map);
+
+        L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+            attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
+        }).addTo(map);
+
+        var kmlLayers = {};
+
+        function loadKMLLayer(filename) {
+            var kmlUrl = "{% get_static_prefix %}kml/" + filename;
+            var layer = new L.KML(kmlUrl, {async: true});
+            layer.on("loaded", function(e) {
+                map.fitBounds(e.target.getBounds());
+            });
+            map.addLayer(layer);
+            kmlLayers[filename] = layer;
+        }
+
+        document.querySelectorAll('.kml-layer-checkbox').forEach(checkbox => {
+            var filename = checkbox.dataset.filename;
+            if (checkbox.checked) {
+                loadKMLLayer(filename);
+            }
+
+            checkbox.addEventListener('change', function() {
+                if (this.checked) {
+                    if (kmlLayers[filename]) {
+                        map.addLayer(kmlLayers[filename]);
+                    } else {
+                        loadKMLLayer(filename);
+                    }
+                } else {
+                    if (kmlLayers[filename]) {
+                        map.removeLayer(kmlLayers[filename]);
+                    }
+                }
+            });
+        });
+    });
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var kmlLayerCheckboxes = document.querySelectorAll('.kml-layer-checkbox');
+        var currentLayerName = document.getElementById('current-layer-name');
+        var selectedLayers = [];
+    
+        kmlLayerCheckboxes.forEach(function(checkbox) {
+            checkbox.addEventListener('change', function() {
+                var layerName = this.parentNode.textContent.trim();
+                var filename = this.dataset.filename;
+    
+                if (this.checked) {
+                    // Layer selected
+                    selectedLayers.push(layerName);
+                    this.parentNode.parentNode.classList.add('selected');
+                    // Here you would add code to show the KML layer on the map
+                    // For example: showKMLLayer(filename);
+                } else {
+                    // Layer deselected
+                    var index = selectedLayers.indexOf(layerName);
+                    if (index !== -1) {
+                        selectedLayers.splice(index, 1);
+                    }
+                    this.parentNode.parentNode.classList.remove('selected');
+                    // Here you would add code to hide the KML layer on the map
+                    // For example: hideKMLLayer(filename);
+                }
+    
+                updateLegend();
+            });
+    
+            // Initialize preselected layers
+            if (checkbox.checked) {
+                var layerName = checkbox.parentNode.textContent.trim();
+                selectedLayers.push(layerName);
+                checkbox.parentNode.parentNode.classList.add('selected');
+                // Here you would add code to show the preselected KML layer on the map
+                // For example: showKMLLayer(checkbox.dataset.filename);
+            }
+        });
+    
+        function updateLegend() {
+            const legendContainer = document.getElementById('map-legend');
+            const currentLayerName = legendContainer.querySelector('p') || document.createElement('p');
+            
+            // Clear existing content
+            currentLayerName.innerHTML = '';
+        
+            if (selectedLayers.length === 0) {
+                currentLayerName.textContent = 'Selecciona una capa';
+            } else {
+                selectedLayers.forEach(layerName => {
+                    const layerElement = document.createElement('div');
+                    layerElement.className = 'layer-item';
+                    layerElement.textContent = layerName;
+                    currentLayerName.appendChild(layerElement);
+                });
+            }
+        
+            // Ensure the paragraph is in the legend container
+            if (!legendContainer.contains(currentLayerName)) {
+                legendContainer.appendChild(currentLayerName);
+            }
+        }
+    
+        // Initial legend update for preselected layers
+        updateLegend();
+    });
+</script>
+{% endblock %}

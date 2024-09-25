@@ -1,0 +1,84 @@
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+}
+
+.audiencias-container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+/* Image styles */
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 73vh;
+    overflow: hidden;
+}
+
+.audiencias-image {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+/* Header styles (assuming you have a header in your base template) */
+header {
+    background-color: #13233d;
+    color: white;
+    padding: 10px 0;
+}
+
+/* Footer styles (assuming you have a footer in your base template) */
+footer {
+    background-color: #13233d;
+    color: white;
+    text-align: center;
+
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+    .image-container {
+        height: auto;
+    }
+
+    .audiencias-image {
+        width: 100%;
+        height: auto;
+    }
+}
+
+/* Additional styles to match home page */
+.gradient-line {
+    height: 5px;
+    background: linear-gradient(to right, #620000, #FF4040);
+}
+
+.link-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #94bc1c;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.link-button:hover {
+    background-color: #7da017;
+}

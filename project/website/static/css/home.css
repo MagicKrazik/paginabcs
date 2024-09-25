@@ -1,0 +1,505 @@
+.home-container {
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.home-section {
+    margin-bottom: 10px;
+    background-color: #f8f9fa;
+    position: relative;
+    overflow: hidden;
+}
+
+.home-section h2 {
+    color: #2C3B53;
+    margin-bottom: 15px;
+}
+
+.gradient-line {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(to right, #620000, #FF4040);
+}
+
+.gradient-line-bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(to right, #620000, #FF4040);
+}
+
+.gradient-line-2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(to right, #808080,  #FFFFFF);
+}
+
+.gradient-line-bottom-2 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(to right, #808080,  #FFFFFF);
+}
+
+/* Section 1 styles */
+
+#section1 {
+    padding: 0;
+    overflow: hidden;
+}
+
+#section1 .content-wrapper {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    max-width: 100%;
+    margin: 0;
+    height: 80vh;
+}
+
+#section1 .map-left-container {
+    flex: 0 0 35%;
+    overflow: hidden;
+}
+
+#section1 .map-right-container {
+    flex: 0 0 65%;
+    overflow: hidden;
+}
+
+#section1 .map-image-left,
+#section1 .map-image-right {
+    width: 100%;
+    height: 100%;
+    max-height: 90vh;
+    object-fit: cover;
+    object-position: center;
+    padding: 8px;
+}
+
+
+@media screen and (max-width: 768px) {
+    #section1 .content-wrapper {
+        flex-direction: column;
+        height: auto;
+    }
+
+    #section1 .map-left-container,
+    #section1 .map-right-container {
+        flex: 0 0 100%;
+        height: 30vh;
+    }
+}
+
+/* Section 0 styles */
+#section0 {
+    background-color: #620000;
+    padding: 60px 0 55px;
+    position: relative;
+}
+
+#section0 .content-wrapper {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+#section0 h2 {
+    color: white;
+    font-size: 2.1rem;
+    margin-bottom: 10px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+#section0 h3 {
+    color: #2C3B53;
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+    text-align: center;
+    font-weight: normal;
+}
+
+.intro-content {
+    background-color: white;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.intro-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    text-align: justify;
+    color: #333;
+}
+
+.intro-list {
+    list-style-type: none;
+    padding-left: 0;
+    margin-bottom: 20px;
+}
+
+.intro-list li {
+    font-size: 1.1rem;
+    line-height: 1.5;
+    margin-bottom: 15px;
+    padding-left: 30px;
+    position: relative;
+    color: #333;
+}
+
+.intro-list li:before {
+    content: "✓";
+    color: #008080;
+    font-weight: bold;
+    display: inline-block;
+    width: 20px;
+    position: absolute;
+    left: 0;
+}
+
+/* Section 3 styles */
+/* Section 3 styles */
+#section3 {
+    background-color: #13233d;
+    padding: 45px 0;
+    color: white;
+}
+
+#section3 .content-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+#section3 h1 {
+    text-align: center;
+    color: white;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 30px;
+    width: 100%;
+}
+
+.consultation-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.consultation-item img {
+    max-width: 80px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.consultation-item h2 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.progress-container {
+    width: 100%;
+    max-width: 400px;
+    margin: 20px 0;
+}
+
+.progress-bar {
+    width: 100%;
+    background-color: white;
+    height: 10px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.progress {
+    width: 40%;
+    height: 100%;
+    background-color: #FF4040;
+}
+
+.link-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #620000;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+    min-width: 150px;
+    transition: background-color 0.3s ease;
+}
+
+.link-button:hover {
+    background-color: #FF4040;
+}
+
+@media screen and (max-width: 768px) {
+    #section3 .content-wrapper {
+        flex-direction: column;
+    }
+
+    .consultation-item {
+        margin-bottom: 30px;
+    }
+}
+
+
+
+
+/* Section 2 styles */
+#section2 {
+    background-color: #808080;
+    padding: 40px 0 35px;
+    position: relative;
+}
+
+#section2 .content-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+#section2 .item-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+#section2 .item {
+    flex-basis: calc(33.333% - 60px);
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#section2 .image-container {
+    width: 50%;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+#section2 .section-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+#section2 h1 {
+    text-align: center;
+    color: white;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 30px;
+    padding: 0 20px;
+    letter-spacing: 1px;
+    position: relative;
+}
+
+#section2 h1::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    margin: 15px auto 0;
+}
+
+/* Section 4 styles */
+#section4 {
+    background-color: #f8f9fa;
+    padding: 55px 0 50px;
+}
+
+#section4 h1 {
+    text-align: center;
+    color: #2C3B53;
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 40px;
+}
+
+#section4 .SepuimLink {
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px;
+    border-radius: 3px;
+  }
+  
+  #section4 .SepuimLink:hover {
+    color: #fff;
+    background-color: #FF4040;
+  }
+
+
+.participation-steps {
+    display: flex;
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.step {
+    flex-basis: 45%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.step-number {
+    background-color: #FF4040;
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.step-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.icon-text-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.icon-text-group i {
+    font-size: 1.5rem;
+    color: #94bc1c;
+    margin-right: 15px;
+    min-width: 30px;
+}
+
+.icon-text-group p {
+    margin: 0;
+    font-size: 1.1rem;
+    line-height: 1.4;
+}
+
+.or-text {
+    margin: 10px 0;
+    font-weight: bold;
+    color: #34749C;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 992px) {
+    #section1 .content-wrapper {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    #section1 .map-left-container,
+    #section1 .title-container {
+        width: 100%;
+        padding: 10px 0;
+    }
+
+    #section1 h1 {
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    #section2 .item-container {
+        justify-content: center;
+    }
+
+    #section2 .item {
+        flex-basis: calc(50% - 30px);
+    }
+
+    #section3 .content-wrapper {
+        flex-direction: column;
+    }
+
+    .consultation-item {
+        flex-basis: 100%;
+        margin-bottom: 30px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .participation-steps {
+        flex-direction: column;
+    }
+
+    .step {
+        margin-bottom: 30px;
+    }
+
+    .icon-text-group {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .icon-text-group i {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    #section2 .item {
+        flex-basis: 100%;
+    }
+
+    #section2 .image-container {
+        width: 60%;
+    }
+
+    #section0 h2 {
+        font-size: 1.8rem;
+    }
+
+    #section0 h3 {
+        font-size: 1.5rem;
+    }
+
+    .intro-text, .intro-list li {
+        font-size: 1rem;
+    }
+
+    #section3 h1 {
+        font-size: 2rem;
+    }
+
+    .consultation-item h2 {
+        font-size: 1.1rem;
+    }
+}

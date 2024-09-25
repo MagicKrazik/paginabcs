@@ -1,0 +1,157 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}PEOTDU - BCS{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+{% endblock %}
+
+{% block content %}
+
+<div class="home-container">
+    <div id="section1" class="section home-section">
+        <div class="content-wrapper">
+            <div class="map-left-container">
+                <img src="{% static 'images/mapa_2.png' %}" alt="Map of Baja California Sur" class="map-image-left">
+            </div>
+            <div class="map-right-container">
+                <img src="{% static 'images/cc.png' %}" alt="Intro-image" class="map-image-right">
+            </div>
+        </div>
+    </div>
+
+    <div id="section0" class="section home-section introduction">
+        <div class="gradient-line"></div>
+        <div class="content-wrapper">
+            <h2>Programa Estatal de Ordenamiento Territorial y Desarrollo Urbano - BCS</h2>
+            <div class="intro-content">
+                <p>El PEOTDU es un instrumento de planeación público, abierto y transparente que busca:</p>
+                <ul class="intro-list">
+                    <li>Integrar infraestructura, productividad, equidad e inclusión social</li>
+                    <li>Proteger el patrimonio natural y cultural del estado</li>
+                    <li>Mejorar la calidad de vida de los habitantes</li>
+                    <li>Impulsar el desarrollo equilibrado y sustentable</li>
+                    <li>Promover el uso racional de los recursos naturales</li>
+                </ul>
+                <p>Este programa se alinea con el Plan Estatal de Desarrollo 2021-2027 y la Estrategia Nacional de Ordenamiento Territorial (ENOT) 2020-2040, contribuyendo a la construcción de un Sistema Estatal de Planeación para el desarrollo sostenible de Baja California Sur.</p>
+            </div>
+        </div>
+        <div class="gradient-line-bottom"></div>
+    </div>
+
+    <div id="section3" class="section home-section">
+        <h1>Participa en la consulta, sé parte del proceso</h1>
+        <div class="content-wrapper">
+            <div class="consultation-item">
+                <img src="{% static 'images/participa.png' %}" alt="Participate Icon">
+                <a href="https://docs.google.com/forms/d/1RA-oxQ7kur5vYnFHp9rP0GeorX5F0dODFmu-bhgQXZE/edit" class="link-button">Participa en la consulta</a>
+            </div>
+            <div class="consultation-item">
+                <h2>Inicio de la consulta del 1 de Julio al 28 de Octubre</h2>
+                <div class="progress-container">
+                    <div class="progress-bar">
+                        <div class="progress"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="consultation-item">
+                <img src="{% static 'images/calendario.png' %}" alt="Calendar Icon">
+                <a href="{% url 'audiencias' %}" class="link-button">Calendario de audiencias</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="section2" class="section home-section">
+        <div class="gradient-line-2"></div>
+        <h1>Conoce más del PEOTyDU</h1>
+        <div class="content-wrapper">
+            <div class="item-container">
+                <div class="item" data-type="document">
+                    <div class="image-container">
+                        <img src="{% static 'images/documento.jpeg' %}" alt="Document Image" class="section-image">
+                    </div>
+                    <a href="{% static 'documents/PEOTyDU.pdf' %}" class="link-button">Consulta el documento</a>
+                </div>
+                <div class="item" data-type="video">
+                    <div class="image-container">
+                        <img src="{% static 'images/video.png' %}" alt="Video Image" class="section-image">
+                    </div>
+                    <a href="https://www.youtube.com/watch?v=nOyi8jeUOmY" class="link-button">Video de Introducción</a>
+                </div>
+                <div class="item" data-type="map">
+                    <div class="image-container">
+                        <img src="{% static 'images/map.png' %}" alt="Map Image" class="section-image">
+                    </div>
+                    <a href="{% url 'mapa' %}" class="link-button">Visualiza la cartografía</a>
+                </div>
+            </div>
+        </div>
+        <div class="gradient-line-bottom-2"></div>
+    </div>
+
+    <div id="section4" class="section home-section">
+        <h1>Cómo participar</h1>
+        <div class="participation-steps">
+            <div class="step">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <div class="icon-text-group">
+                        <i class="fas fa-file-alt"></i>
+                        <p>Contesta y envía el formulario con tu observación</p>
+                    </div>
+                    <p class="or-text">ó</p>
+                    <div class="icon-text-group">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p>Asiste a las <a href="https://maps.app.goo.gl/kHbDsDarntcTttvq7" class="SepuimLink">oficinas de SEPUIMM</a> y llena el formulario</p>
+                    </div>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <div class="icon-text-group">
+                        <i class="fas fa-search"></i>
+                        <p>Con tu folio consulta en el siguiente link la respuesta a tu observación a partir de las fechas establecidas</p>
+                    </div>
+                    <a href="{% url 'audiencias' %}" class="link-button">Consultar respuesta</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+{% block extra_js %}
+{{ block.super }}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const startDate = new Date('2024-07-01');
+        const endDate = new Date('2024-10-28');
+        const totalDays = Math.ceil((endDate - startDate) / (1000 * 60 * 60 * 24));
+        
+        function updateProgress() {
+            const currentDate = new Date();
+            const elapsedDays = Math.ceil((currentDate - startDate) / (1000 * 60 * 60 * 24));
+            const remainingDays = Math.max(0, Math.ceil((endDate - currentDate) / (1000 * 60 * 60 * 24)));
+            const progressPercentage = Math.min(Math.max(Math.round((elapsedDays / totalDays) * 100), 0), 100);
+
+            document.getElementById('consultation-progress').style.width = `${progressPercentage}%`;
+            document.getElementById('progress-percentage').textContent = `${progressPercentage}%`;
+            document.getElementById('days-left').textContent = `${remainingDays} días restantes`;
+        }
+
+        updateProgress();
+        setInterval(updateProgress, 86400000); // Update once a day
+    });
+</script>
+{% endblock %}
+
+
+
+
+{% endblock %}
+
+

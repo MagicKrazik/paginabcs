@@ -1,0 +1,70 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}PEOTDU - BCS{% endblock %}</title>
+    <link rel="icon" type="image/png" href="{% static 'images/favicon_1.png' %}">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.7.1/jszip.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    {% block extra_css %}{% endblock %}
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="navbar-left">
+            <div class="logo-container">
+                <div class="logo-box">
+                    <a href="{% url 'home' %}"><img src="{% static 'images/logo1.png' %}" alt="Logo 1" class="logo"></a>
+                </div>
+                <div class="logo-box">
+                    <a href="{% url 'home' %}"><img src="{% static 'images/logo2.jpeg' %}" alt="Logo 2" class="logo"></a>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="menu-toggle">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+        <div class="navbar-right">
+            <ul class="nav-links">
+                <li><a href="{% url 'home' %}">Inicio</a></li>
+                <li><a href="{% url 'mapa' %}">Mapas</a></li>
+                <li><a href="{% url 'cartografia' %}">Cartografia</a></li>
+                <li><a href="{% url 'audiencias' %}">Audiencias</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main role="main">
+        {% block content %}
+        {% endblock %}
+        {% block extra_js %}
+        {% endblock %}
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p><strong>"POR EL DERECHO A LA CIUDAD"</strong></p>
+            <p>Baja California Sur</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navbarRight = document.querySelector('.navbar-right');
+        
+            menuToggle.addEventListener('click', function() {
+                navbarRight.classList.toggle('active');
+            });
+        });
+    </script>
+
+
+</body>
+</html>

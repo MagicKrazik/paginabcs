@@ -1,0 +1,170 @@
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #FFFFFF;
+}
+
+/* Navbar styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 0.5rem 2rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-left {
+    display: flex;
+    align-items: center;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo-box {
+    background-color: #f0f0f0;
+    margin-right: 1rem;
+    margin-top: 1rem;
+    border-radius: 4px;
+}
+
+.logo {
+    height: 50px;
+    width: auto;
+    display: block;
+}
+
+.navbar-right {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.nav-links {
+    list-style-type: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 1.5rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #404040;
+    font-weight: bold;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+    background-color: #620000;
+    color: white;
+}
+
+/* Menu toggle */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: #620000;
+    margin: 3px 0;
+    transition: 0.4s;
+}
+
+/* Main content */
+main {
+    flex: 1;
+    background-color: #FFFFFF;
+}
+
+/* Footer styles */
+footer {
+    background-color: #620000;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+.footer-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Responsive design */
+@media screen and (max-width: 768px) {
+    .navbar {
+        flex-wrap: wrap;
+    }
+
+    .navbar-left {
+        order: 1;
+        width: 100%;
+        justify-content: center;
+        margin-bottom: 1rem;
+    }
+
+    .menu-toggle {
+        display: flex;
+        order: 2;
+        position: absolute;
+        top: 1rem;
+        right: 2rem;
+    }
+
+    .navbar-right {
+        order: 3;
+        width: 100%;
+        display: none;
+    }
+
+    .navbar-right.active {
+        display: flex;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .nav-links li {
+        margin: 0.5rem 0;
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 0.5rem;
+        text-align: center;
+    }
+
+    .logo-container {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .logo-box {
+        margin: 0.5rem;
+    }
+}
