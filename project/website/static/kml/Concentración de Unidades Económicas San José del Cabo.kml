@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Folder>
+	<name>Concentración de Unidades Económicas San José del Cabo</name>
+	<open>1</open>
+	<Document>
+		<name>4.shp</name>
+		<Schema name="4" id="S_4_DD">
+			<SimpleField type="long" name="Id"><displayName>&lt;b&gt;Id&lt;/b&gt;</displayName>
+</SimpleField>
+			<SimpleField type="long" name="gridcode"><displayName>&lt;b&gt;gridcode&lt;/b&gt;</displayName>
+</SimpleField>
+			<SimpleField type="double" name="Shape_Leng"><displayName>&lt;b&gt;Shape_Leng&lt;/b&gt;</displayName>
+</SimpleField>
+			<SimpleField type="double" name="Shape_Area"><displayName>&lt;b&gt;Shape_Area&lt;/b&gt;</displayName>
+</SimpleField>
+		</Schema>
+		<StyleMap id="falseColor">
+			<Pair>
+				<key>normal</key>
+				<styleUrl>#falseColor1</styleUrl>
+			</Pair>
+			<Pair>
+				<key>highlight</key>
+				<styleUrl>#falseColor0</styleUrl>
+			</Pair>
+		</StyleMap>
+		<Style id="falseColor0">
+			<BalloonStyle>
+				<text><![CDATA[<table border="0">
+  <tr><td><b>Id</b></td><td>$[4/Id]</td></tr>
+  <tr><td><b>gridcode</b></td><td>$[4/gridcode]</td></tr>
+  <tr><td><b>Shape_Leng</b></td><td>$[4/Shape_Leng]</td></tr>
+  <tr><td><b>Shape_Area</b></td><td>$[4/Shape_Area]</td></tr>
+</table>
+]]></text>
+			</BalloonStyle>
+			<PolyStyle>
+				<color>b37f0000</color>
+				<colorMode>random</colorMode>
+				<outline>0</outline>
+			</PolyStyle>
+		</Style>
+		<Style id="falseColor1">
+			<BalloonStyle>
+				<text><![CDATA[<table border="0">
+  <tr><td><b>Id</b></td><td>$[4/Id]</td></tr>
+  <tr><td><b>gridcode</b></td><td>$[4/gridcode]</td></tr>
+  <tr><td><b>Shape_Leng</b></td><td>$[4/Shape_Leng]</td></tr>
+  <tr><td><b>Shape_Area</b></td><td>$[4/Shape_Area]</td></tr>
+</table>
+]]></text>
+			</BalloonStyle>
+			<PolyStyle>
+				<color>b37f0000</color>
+				<colorMode>random</colorMode>
+				<outline>0</outline>
+			</PolyStyle>
+		</Style>
+		<Folder id="layer 0">
+			<name>4</name>
+			<Placemark>
+				<styleUrl>#falseColor</styleUrl>
+				<ExtendedData>
+					<SchemaData schemaUrl="#S_4_DD">
+						<SimpleData name="Id">3</SimpleData>
+						<SimpleData name="gridcode">4</SimpleData>
+						<SimpleData name="Shape_Leng">0.0160151</SimpleData>
+						<SimpleData name="Shape_Area">1.72268e-05</SimpleData>
+					</SchemaData>
+				</ExtendedData>
+				<Polygon>
+					<outerBoundaryIs>
+						<LinearRing>
+							<coordinates>
+								-109.6934369437638,23.06198107788089,0 -109.6956673568596,23.06352104372178,0 -109.6981952408845,23.06273746696742,0 -109.6994034524462,23.06090601973619,0 -109.6974404060904,23.05955066256981,0 -109.69408497342,23.05934275018006,0 -109.6934369437638,23.06198107788089,0 
+							</coordinates>
+						</LinearRing>
+					</outerBoundaryIs>
+				</Polygon>
+			</Placemark>
+		</Folder>
+	</Document>
+	<Document>
+		<name>3.shp</name>
+		<Schema name="3" id="S_3_DD">
+			<SimpleField type="long" name="Id"><displayName>&lt;b&gt;Id&lt;/b&gt;</displayName>
+</SimpleField>
+			<SimpleField type="long" name="gridcode"><displayName>&lt;b&gt;gridcode&lt;/b&gt;</displayName>
+</SimpleField>
+			<SimpleField type="double" name="Shape_Leng"><displayName>&lt;b&gt;Shape_Leng&lt;/b&gt;</displayName>
+</SimpleField>
+			<SimpleField type="double" name="Shape_Area"><displayName>&lt;b&gt;Shape_Area&lt;/b&gt;</displayName>
+</SimpleField>
+		</Schema>
+		<Style id="falseColor2">
+			<BalloonStyle>
+				<text><![CDATA[<table border="0">
+  <tr><td><b>Id</b></td><td>$[3/Id]</td></tr>
+  <tr><td><b>gridcode</b></td><td>$[3/gridcode]</td></tr>
+  <tr><td><b>Shape_Leng</b></td><td>$[3/Shape_Leng]</td></tr>
+  <tr><td><b>Shape_Area</b></td><td>$[3/Shape_Area]</td></tr>
+</table>
+]]></text>
+			</BalloonStyle>
+			<PolyStyle>
+				<color>b37f5500</color>
+				<outline>0</outline>
+			</PolyStyle>
+		</Style>
+		<StyleMap id="falseColor3">
+			<Pair>
+				<key>normal</key>
+				<styleUrl>#falseColor2</styleUrl>
+			</Pair>
+			<Pair>
+				<key>highlight</key>
+				<styleUrl>#falseColor4</styleUrl>
+			</Pair>
+		</StyleMap>
+		<Style id="falseColor4">
+			<BalloonStyle>
+				<text><![CDATA[<table border="0">
+  <tr><td><b>Id</b></td><td>$[3/Id]</td></tr>
+  <tr><td><b>gridcode</b></td><td>$[3/gridcode]</td></tr>
+  <tr><td><b>Shape_Leng</b></td><td>$[3/Shape_Leng]</td></tr>
+  <tr><td><b>Shape_Area</b></td><td>$[3/Shape_Area]</td></tr>
+</table>
+]]></text>
+			</BalloonStyle>
+			<PolyStyle>
+				<color>b37f5500</color>
+				<outline>0</outline>
+			</PolyStyle>
+		</Style>
+		<Folder id="layer 0">
+			<name>3</name>
+			<Placemark>
+				<styleUrl>#falseColor3</styleUrl>
+				<ExtendedData>
+					<SchemaData schemaUrl="#S_3_DD">
+						<SimpleData name="Id">4</SimpleData>
+						<SimpleData name="gridcode">3</SimpleData>
+						<SimpleData name="Shape_Leng">0.0509539</SimpleData>
+						<SimpleData name="Shape_Area">4.88594e-05</SimpleData>
+					</SchemaData>
+				</ExtendedData>
+				<Polygon>
+					<outerBoundaryIs>
+						<LinearRing>
+							<coordinates>
+								-109.6924664251182,23.06009613738389,0 -109.6930433805769,23.06309910136145,0 -109.6959445117293,23.06467560196459,0 -109.7009466869247,23.06288076063039,0 -109.7054767129154,23.06217484869984,0 -109.7056482968334,23.05929604316101,0 -109.7042522435268,23.05773358454001,0 -109.7027477347583,23.05764391218538,0 -109.6991633907459,23.05893001264491,0 -109.6957297419581,23.05769797452839,0 -109.69408497342,23.05747799769999,0 -109.6924664251182,23.06009613738389,0 
+							</coordinates>
+						</LinearRing>
+					</outerBoundaryIs>
+					<innerBoundaryIs>
+						<LinearRing>
+							<coordinates>
+								-109.6974404060904,23.05955066256981,0 -109.6994034524462,23.06090601973619,0 -109.6981952408845,23.06273746696742,0 -109.6956673568596,23.06352104372178,0 -109.6934369437638,23.06198107788089,0 -109.69408497342,23.05934275018006,0 -109.6974404060904,23.05955066256981,0 
+							</coordinates>
+						</LinearRing>
+					</innerBoundaryIs>
+				</Polygon>
+			</Placemark>
+		</Folder>
+	</Document>
+	<Document>
+		<name>2.shp</name>
+		<Schema name="2" id="S_2_DD">
+			<SimpleField type="long" name="Id"><displayName>&lt;b&gt;Id&lt;/b&gt;</displayName>
+</SimpleField>
+			<SimpleField type="long" name="gridcode"><displayName>&lt;b&gt;gridcode&lt;/b&gt;</displayName>
+</SimpleField>
+			<SimpleField type="double" name="Shape_Leng"><displayName>&lt;b&gt;Shape_Leng&lt;/b&gt;</displayName>
+</SimpleField>
+			<SimpleField type="double" name="Shape_Area"><displayName>&lt;b&gt;Shape_Area&lt;/b&gt;</displayName>
+</SimpleField>
+		</Schema>
+		<StyleMap id="falseColor5">
+			<Pair>
+				<key>normal</key>
+				<styleUrl>#falseColor6</styleUrl>
+			</Pair>
+			<Pair>
+				<key>highlight</key>
+				<styleUrl>#falseColor7</styleUrl>
+			</Pair>
+		</StyleMap>
+		<Style id="falseColor6">
+			<BalloonStyle>
+				<text><![CDATA[<table border="0">
+  <tr><td><b>Id</b></td><td>$[2/Id]</td></tr>
+  <tr><td><b>gridcode</b></td><td>$[2/gridcode]</td></tr>
+  <tr><td><b>Shape_Leng</b></td><td>$[2/Shape_Leng]</td></tr>
+  <tr><td><b>Shape_Area</b></td><td>$[2/Shape_Area]</td></tr>
+</table>
+]]></text>
+			</BalloonStyle>
+			<PolyStyle>
+				<color>6600ffff</color>
+				<outline>0</outline>
+			</PolyStyle>
+		</Style>
+		<Style id="falseColor7">
+			<BalloonStyle>
+				<text><![CDATA[<table border="0">
+  <tr><td><b>Id</b></td><td>$[2/Id]</td></tr>
+  <tr><td><b>gridcode</b></td><td>$[2/gridcode]</td></tr>
+  <tr><td><b>Shape_Leng</b></td><td>$[2/Shape_Leng]</td></tr>
+  <tr><td><b>Shape_Area</b></td><td>$[2/Shape_Area]</td></tr>
+</table>
+]]></text>
+			</BalloonStyle>
+			<PolyStyle>
+				<color>6600ffff</color>
+				<outline>0</outline>
+			</PolyStyle>
+		</Style>
+		<Folder id="layer 0">
+			<name>2</name>
+			<Placemark>
+				<styleUrl>#falseColor5</styleUrl>
+				<ExtendedData>
+					<SchemaData schemaUrl="#S_2_DD">
+						<SimpleData name="Id">1</SimpleData>
+						<SimpleData name="gridcode">2</SimpleData>
+						<SimpleData name="Shape_Leng">0.0108661</SimpleData>
+						<SimpleData name="Shape_Area">7.16697e-06</SimpleData>
+					</SchemaData>
+				</ExtendedData>
+				<Polygon>
+					<outerBoundaryIs>
+						<LinearRing>
+							<coordinates>
+								-109.7125505393116,23.11883286707496,0 -109.711735652636,23.11935454734474,0 -109.7120890852034,23.12061219393961,0 -109.7139783471312,23.12106154448522,0 -109.7161777739683,23.11972821061011,0 -109.7146609517897,23.11875716556786,0 -109.71273249822,23.11854864142003,0 -109.7125505393116,23.11883286707496,0 
+							</coordinates>
+						</LinearRing>
+					</outerBoundaryIs>
+				</Polygon>
+			</Placemark>
+			<Placemark>
+				<styleUrl>#falseColor5</styleUrl>
+				<ExtendedData>
+					<SchemaData schemaUrl="#S_2_DD">
+						<SimpleData name="Id">5</SimpleData>
+						<SimpleData name="gridcode">2</SimpleData>
+						<SimpleData name="Shape_Leng">0.211745</SimpleData>
+						<SimpleData name="Shape_Area">0.000461552</SimpleData>
+					</SchemaData>
+				</ExtendedData>
+				<Polygon>
+					<outerBoundaryIs>
+						<LinearRing>
+							<coordinates>
+								-109.7022386026429,23.05117979164622,0 -109.6999169877971,23.05538481759395,0 -109.699075066393,23.05630786096616,0 -109.696187482837,23.05397692036615,0 -109.694734070096,23.05352006511392,0 -109.6926244365426,23.05460684625096,0 -109.6911234738367,23.0607638500008,0 -109.6920197599061,23.06338240226578,0 -109.6935259403393,23.06482952314599,0 -109.6953554740482,23.06563162336619,0 -109.7000774747077,23.06466447650348,0 -109.7024887903622,23.06471368746255,0 -109.7032368851471,23.06930911466152,0 -109.7055884512423,23.07240820290762,0 -109.7050357313628,23.0740230166398,0 -109.7045521934988,23.07551310285561,0 -109.7045806153531,23.07690580571957,0 -109.7067272851682,23.08107286709804,0 -109.7047469993271,23.08399428229932,0 -109.7055684268349,23.08881008468075,0 -109.7083083739571,23.09220435331967,0 -109.7087721861793,23.09600004196913,0 -109.7101645049161,23.10006779935982,0 -109.7107099406061,23.10397490623002,0 -109.7130432001961,23.11038568999958,0 -109.7167177073922,23.10849276108009,0 -109.7203238114976,23.10856634988777,0 -109.7220602192639,23.10797201267457,0 -109.7232170698213,23.10658323644383,0 -109.7211727076551,23.10261477592775,0 -109.7231441923602,23.10072060215168,0 -109.7236832579413,23.0999628970738,0 -109.7197834121416,23.09740603990126,0 -109.718098324477,23.09827411752048,0 -109.7167656912784,23.09873098699977,0 -109.7162335719971,23.09220435331967,0 -109.7132130093042,23.088223614961,0 -109.7096209471811,23.08477241725207,0 -109.7097080800284,23.08050302866241,0 -109.7138155803546,23.07655660566438,0 -109.7143594937629,23.07534863240395,0 -109.712936914341,23.07258715637651,0 -109.7101144012169,23.07073663082883,0 -109.7090941132051,23.06967469702926,0 -109.7083083739571,23.06003736592611,0 -109.7059681076029,23.05491862947384,0 -109.7053589565962,23.04993352659722,0 -109.70340873582,23.04955279965993,0 -109.7022386026429,23.05117979164622,0 
+							</coordinates>
+						</LinearRing>
+					</outerBoundaryIs>
+					<innerBoundaryIs>
+						<LinearRing>
+							<coordinates>
+								-109.71879294378,23.10223205722003,0 -109.71879294378,23.10363062158011,0 -109.71739437942,23.10363062158011,0 -109.71739437942,23.10223205722003,0 -109.71879294378,23.10223205722003,0 
+							</coordinates>
+						</LinearRing>
+						<LinearRing>
+							<coordinates>
+								-109.6957297419581,23.05769797452839,0 -109.6991633907459,23.05893001264491,0 -109.7027477347583,23.05764391218538,0 -109.7042522435268,23.05773358454001,0 -109.7056482968334,23.05929604316101,0 -109.7054767129154,23.06217484869984,0 -109.7009466869247,23.06288076063039,0 -109.6959445117293,23.06467560196459,0 -109.6930433805769,23.06309910136145,0 -109.6924664251182,23.06009613738389,0 -109.69408497342,23.05747799769999,0 -109.6957297419581,23.05769797452839,0 
+							</coordinates>
+						</LinearRing>
+					</innerBoundaryIs>
+				</Polygon>
+			</Placemark>
+			<Placemark>
+				<styleUrl>#falseColor5</styleUrl>
+				<ExtendedData>
+					<SchemaData schemaUrl="#S_2_DD">
+						<SimpleData name="Id">6</SimpleData>
+						<SimpleData name="gridcode">2</SimpleData>
+						<SimpleData name="Shape_Leng">0.0169157</SimpleData>
+						<SimpleData name="Shape_Area">2.0461e-05</SimpleData>
+					</SchemaData>
+				</ExtendedData>
+				<Polygon>
+					<outerBoundaryIs>
+						<LinearRing>
+							<coordinates>
+								-109.7041380297138,23.04049213592048,0 -109.7023959133909,23.04183683711443,0 -109.7028396691953,23.0448397157304,0 -109.7056782231856,23.04556019603961,0 -109.7078075112461,23.04333005325553,0 -109.7067492551085,23.04063811847344,0 -109.70434111206,23.04022903726014,0 -109.7041380297138,23.04049213592048,0 
+							</coordinates>
+						</LinearRing>
+					</outerBoundaryIs>
+				</Polygon>
+			</Placemark>
+		</Folder>
+	</Document>
+</Folder>
+</kml>

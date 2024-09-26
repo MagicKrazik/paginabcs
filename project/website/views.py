@@ -12,14 +12,17 @@ def get_kml_files():
     kml_dir = os.path.join(settings.STATICFILES_DIRS[0], 'kml')
     kml_files = [f for f in os.listdir(kml_dir) if f.endswith('.kml')]
     
-    # Add labels and preselection for KML files
+    # Add labels and sort alphabetically
     kml_data = [
         {
             'filename': f,
             'label': f.replace('.kml', '').replace('_', ' ').title(),
-            #'preselected': f == 'Mapa_Base.kml'  # Preselect the base map
         } for f in kml_files
     ]
+    
+    # Sort the list based on the 'label' key
+    kml_data.sort(key=lambda x: x['label'])
+    
     return kml_data
 
 def mapa(request):
@@ -37,4 +40,8 @@ def cartografia_view(request):
                 'filename': filename,
                 'url': f'{settings.STATIC_URL}pdf/{filename}'
             })
+    
+    # Sort the pdf_files list based on the 'title' key
+    pdf_files.sort(key=lambda x: x['title'])
+    
     return render(request, 'cartografia.html', {'pdf_files': pdf_files})

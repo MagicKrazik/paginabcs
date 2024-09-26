@@ -30,23 +30,6 @@ body {
     border-radius: 10px;
 }
 
-/* Header styles (assuming you have a header in your base template) */
-header {
-    background-color: #13233d;
-    color: white;
-    padding: 10px 0;
-}
-
-/* Footer styles (assuming you have a footer in your base template) */
-footer {
-    background-color: #13233d;
-    color: white;
-    text-align: center;
-
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-}
 
 /* Responsive styles */
 @media screen and (max-width: 768px) {
